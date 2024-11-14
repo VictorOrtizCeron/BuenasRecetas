@@ -47,4 +47,63 @@
         button:hover {
             background-color: #0056b3;
        }
-    
+    .recipe-form textarea {
+        resize: none;
+        height: 80px;
+    }
+
+    .image-upload {
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    .image-label {
+        font-size: 2em;
+        color: #aaa;
+        cursor: pointer;
+    }
+
+    .image-upload input[type="file"] {
+        display: none;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+
+    .add-step, .cancel, .publish {
+        width: 32%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .add-step {
+        background-color: #FFCC66;
+    }
+
+    .cancel {
+        background-color: #FF6666;
+    }
+
+    .publish {
+        background-color: #66CC66;
+    }
+
+    .add-step:hover {
+        background-color: #e6b35c;
+    }
+
+    .cancel:hover {
+        background-color: #e65a5a;
+    }
+
+    .publish:hover {
+        background-color: #5cb85c;
+    }

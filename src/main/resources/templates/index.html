@@ -9,11 +9,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <title>Buenas Recetas</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="/estilos.css" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/css/estilos.css}" rel="stylesheet" type="text/css"/>
     </head>
     <body>
     <h1>Bienvenido a la Página de Inicio</h1>
     <p>Haga clic en el siguiente enlace para ir a la página de inicio de sesión:</p>
-    <a href="Login/inicio_sesion.html">Iniciar Sesión</a>
+    <a th:href="@{auth/login/inicio_sesion}">Iniciar Sesión</a>
 </body>
 </html>
