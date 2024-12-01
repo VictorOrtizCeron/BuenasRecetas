@@ -5,15 +5,35 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 -->
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Buenas Recetas</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link th:href="@{/css/estilos.css}" rel="stylesheet" type="text/css"/>
-    </head>
-    <body>
-    <h1>Bienvenido a la Página de Inicio</h1>
-    <p>Haga clic en el siguiente enlace para ir a la página de inicio de sesión:</p>
-    <a th:href="@{auth/login/inicio_sesion}">Iniciar Sesión</a>
+
+<head th:replace="~{layout/plantilla :: head}">
+
+
+</head>
+
+<body class="landing-page-body">
+
+
+<header >
+    <nav th:replace="~{layout/plantilla :: navbar}"></nav>
+</header>
+    <img class = "foto-landing-page-verduras" th:src ="@{/images/verduras.png}">
+<img class = "foto-landing-page-steak" th:src ="@{/images/steak.png}">
+
+    <div class="px-4  my-5 text-center container-fluid ">
+
+        <h1 class="display-5 fw-bold text-body-emphasis text-font title">Buenas Recetas de <br>todos para <span class = "texto_highlight">todos</span></h1>
+        <div class="col-lg-6 mx-auto">
+
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <button type="button" class="btn  btn-lg px-2 gap-3 texto-font my-2">Únete y explora</button>
+            </div>
+        </div>
+    </div>
+
+
+
 </body>
+
+
 </html>

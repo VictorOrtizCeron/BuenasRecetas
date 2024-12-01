@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="head">
+        <title>Buenas Recetas</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+        <link th:href="@{/css/estilos.css}" rel="stylesheet" type="text/css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+3:wght@800&family=Yeseva+One&display=swap" rel="stylesheet">
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+    </head>
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary " th:fragment="navbar">
+        <div class="container justify-content-center ">
+            <a class="navbar-brand" href="#"><img th:src="@{/images/Logo-navbar.png}" alt="foto" class="navbar-foto"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center ">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="#">Sobre nosotros</a>
+                    </li>
+                    <li class="nav-item text-font">
+                        <a class="nav-link" href="#">Buscar recetas</a>
+                    </li>
+                    <li class="nav-item text-font">
+                        <a class="nav-link" href="#">Crear receta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-font" href="#">Mi cuenta</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn  px-2 gap-3 texto-font my-2">Inicia sesión</button>
+                    </li>
+
+
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+</html>
