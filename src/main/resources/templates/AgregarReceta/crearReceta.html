@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <head th:replace="~{layout/plantilla :: head}">
+
+    </head>
+</head>
+<body class = "landing-page-body">
+<header >
+    <nav th:replace="~{layout/plantilla :: navbar}"></nav>
+</header>
+<body>
+
+    <div class = "container">
+
+        <div class="mb-3">
+            <label for="NombreReceta" class="form-label text-font">Nombre de la Receta</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="DescripcionReceta" class="form-label text-font">Describe tu receta</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+        </div>
+
+        <div class="d-flex row">
+            <div class="mb-3 col-6">
+                <label for="PasosReceta" class="form-label text-font">Pasos de la receta</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+            </div>
+            <div class="mb-3 col-6">
+                <label for="formFile" class="form-label">Default file input example</label>
+                <input class="form-control" type="file" id="formFile">
+
+            </div>
+
+        </div>
+
+        <div class="d-flex row">
+            
+
+        </div>
+
+
+</div>
+</body>
+</html>

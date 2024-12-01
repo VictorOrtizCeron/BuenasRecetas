@@ -20,11 +20,7 @@ public class CuentaController {
     @Autowired
     private CuentaService cuentaService;
 
-    @GetMapping("/login/inicio_sesion")
-    public String mostrarLogin() {
 
-        return "/auth/login/inicio_sesion"; // view name for login page
-    }
 
     @PostMapping("/login/ingresar")
     public String login(@RequestParam("email") String email,@RequestParam("password") String password){

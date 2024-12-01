@@ -52,3 +52,9 @@
     rotate: -45deg;
     right: -22%;
 }
+
+/*Styles y clases para Página de búsqueda*/
+
+.searchbar{
+    padding :0 200px;
+}

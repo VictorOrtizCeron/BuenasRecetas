@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <head th:replace="~{layout/plantilla :: head}">
+
+    </head>
 </head>
-<body>
+<body class = "landing-page-body">
+<header >
+    <nav th:replace="~{layout/plantilla :: navbar}"></nav>
+</header>
+    <div class="input-group rounded searchbar">
+
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+        <span class="input-group-text border-0" id="search-addon">
+        <i class="fas fa-search"></i>
+      </span>
+    </div>
+
+    <div class = "container d-flex justify-content-center mt-5 ">
+            <div class="card " >
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="..." class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    </div>
+
 
 </body>
 </html>
