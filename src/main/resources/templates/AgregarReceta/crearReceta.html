@@ -11,39 +11,83 @@
 <header >
     <nav th:replace="~{layout/plantilla :: navbar}"></nav>
 </header>
-<body>
-
+</body>
+    <form th:action ="@{/AgregarReceta/crearReceta/guardar}" th:object ="${receta}"
+    method = "POST" class="was-validated"  enctype="multipart/form-data" >
     <div class = "container">
 
+
+
+
         <div class="mb-3">
-            <label for="NombreReceta" class="form-label text-font">Nombre de la Receta</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+            <label for="nombre" class="form-label text-font">Nombre de la Receta</label>
+            <input type="text" class="form-control" name ="nombre" required = "true" >
         </div>
         <div class="mb-3">
-            <label for="DescripcionReceta" class="form-label text-font">Describe tu receta</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="descripcion" class="form-label text-font">Describe tu receta</label>
+            <textarea class="form-control" name = "descripcion" required = "true" rows="3"></textarea>
 
         </div>
 
-        <div class="d-flex row">
+        <div class="d-flex row align-items-center">
             <div class="mb-3 col-6">
-                <label for="PasosReceta" class="form-label text-font">Pasos de la receta</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <label for="pasos" class="form-label text-font">Pasos de la receta</label>
+                <textarea class="form-control" name="pasos" required = "true"rows="3"></textarea>
 
             </div>
             <div class="mb-3 col-6">
-                <label for="formFile" class="form-label">Default file input example</label>
-                <input class="form-control" type="file" id="formFile">
+
+                <label for="rutaImagen" class="form-label text-font">Url de la imagen</label>
+                <input type="text" class="form-control" required = "true" name = "rutaImagen" id="basic-url" aria-describedby="basic-addon3">
 
             </div>
 
         </div>
 
-        <div class="d-flex row">
-            
+        <div class="mb-3 d-flex row align-items-center">
+            <div class="mb-3 col-6">
+                <label for="categoria" class="form-label text-font">Selecciona una categoría</label>
+                <select id="categoria" name="categoria" class="form-select"  required>
+                    <option value="" selected disabled>Elige una opción</option>
+                    <option value="Desayuno">Desayuno</option>
+                    <option value="Almuerzo">Almuerzo</option>
+                    <option value="Cena">Cena</option>
+                    <option value="Postre">Postre</option>
+                </select>
+            </div>
+
+
+            <div class="mb-3 col-6">
+                <label class="form-label text-font">Modalidad de publicación</label>
+
+                <div>
+                    <input type="radio" id="activo" name="activo" value="true" required>
+                    <label for="activo">Público</label>
+                </div>
+                <div>
+                    <input type="radio" id="inactivo" name="activo" value="false" required>
+                    <label for="inactivo">Privado</label>
+                </div>
+
+            </div>
 
         </div>
 
+
+        <div class = "d-flex row ">
+            <div class = "col">
+                <button type="submit" class="btn btn-aceptar  ">Publicar</button>
+
+                <button type="button" class="btn btn-cancelar ">Cancelar</button>
+            </div>
+
+
+        </div>
+
+
+
+
+    </form>
 
 </div>
 </body>
