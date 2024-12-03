@@ -38,5 +38,11 @@ public class RecetaServiceImpl implements RecetaService {
         return recetaDao.buscarPorNombre(nombre);
     }
     
+    @Override
+    @Transactional public
+    void delete(Receta receta) {
+        recetaDao.delete(receta);
+    }
+    
     
 }

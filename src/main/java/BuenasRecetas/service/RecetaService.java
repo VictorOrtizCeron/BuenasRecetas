@@ -13,4 +13,5 @@ public interface RecetaService {
 
     public List<Receta> buscarPorNombre(String nombreBusqueda);
     
+    public void delete(Receta receta);
 }

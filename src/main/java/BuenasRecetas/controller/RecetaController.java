@@ -5,6 +5,7 @@ import BuenasRecetas.service.RecetaService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,19 +28,19 @@ public class RecetaController {
         return "redirect:/BuscadorRecetas/buscar";
     }
 
+    @PostMapping("/BuscadorRecetas/buscar/eliminar/{idReceta}")
+    public String eliminarReceta(Receta receta) {
+        System.out.println(receta.toString());
+        recetaService.delete(receta);
+        return "redirect:/BuscadorRecetas/buscar";
+    }
 
-//    @PostMapping("/guardar")
-//    public String productoGuardar(Producto producto,
-//                                  @RequestParam("imagenFile") MultipartFile imagenFile) {
-//        if (!imagenFile.isEmpty()) {
-//            productoService.save(producto);
-//            producto.setRutaImagen(
-//                    firebaseStorageService.cargaImagen(
-//                            imagenFile,
-//                            "producto",
-//                            producto.getIdProducto()));
-//        }
-//        productoService.save(producto);
-//        return "redirect:/producto/listado";
-//    }
+    @GetMapping("/BuscadorRecetas/buscar/query")
+    public String buscarReceta(@RequestParam(value = "nombreBusqueda") String nombreBusqueda, Model model) {
+        System.out.println(nombreBusqueda);
+        var recetas = recetaService.buscarPorNombre(nombreBusqueda);
+        model.addAttribute("recetas", recetas);
+        return "/BuscadorRecetas/buscar";
+    }
+
 }
