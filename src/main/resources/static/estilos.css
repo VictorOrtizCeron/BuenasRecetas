@@ -1,117 +1,102 @@
+/*Styles y clases para landing page*/
 
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f9;
-        }
-        .login-container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
-        }
-        h2 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-        label {
-            display: block;
-            margin: 10px 0 5px;
-            text-align: left;
-        }
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-       }
-    .recipe-form textarea {
-        resize: none;
-        height: 80px;
-    }
-
-    .image-upload {
-        margin-top: 15px;
-        text-align: center;
-    }
-
-    .image-label {
-        font-size: 2em;
-        color: #aaa;
-        cursor: pointer;
-    }
-
-    .image-upload input[type="file"] {
-        display: none;
-    }
-
-    .button-container {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-    }
+.texto_highlight{
+    color:#27AE60;
 
 
-    .add-step, .cancel, .publish {
-        width: 32%;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        font-size: 1em;
-        cursor: pointer;
-        color: #fff;
-    }
+}
+.text-font{
+    font-family: "Poppins",sans-serif;
+    color: #2c3e50;
+}
 
-    .add-step {
-        background-color: #FFCC66;
-    }
+.landing-page-body{
+    background-color:#FFF9E6 ;
+}
 
-    .cancel {
-        background-color: #FF6666;
-    }
+.navbar-foto{
+    height: 130px;
+    width: auto;
+}
 
-    .publish {
-        background-color: #66CC66;
-    }
+.title{
+    font-size:60px ;
+    font-weight: 900;
+}
+.btn{
+    background-color:#E67E22;
+    border-style: none;
+    color:white;
+}
+.btn:hover{
+    background-color:#E67E22;
+    border-style:solid;
+    border-color: #27AE60;
+    border-width: 2px;
+    color:white;
+}
 
-    .add-step:hover {
-        background-color: #e6b35c;
-    }
+.foto-landing-page-verduras{
 
-    .cancel:hover {
-        background-color: #e65a5a;
-    }
+    position:fixed;
+    z-index: -1;
+    height: 80%;
+    rotate: 45deg;
+    left: -20%;
+}
+.foto-landing-page-steak{
 
-    .publish:hover {
-        background-color: #5cb85c;
-    }
+    position:fixed;
+    z-index: -1;
+    height: 100%;
+    rotate: -45deg;
+    right: -22%;
+}
 
-    landing-page-body{
+/*Styles y clases para Página de búsqueda*/
 
-    background-color:blue;
+.searchbar{
+    padding :0 200px;
+}
 
-    }
+/*Styles y clases para página de agregación de receta*/
+
+.btn-aceptar{
+    background-color:#27AE60;
+    border-style: none;
+    color:white;
+}
+.btn-aceptar:hover{
+    background-color:#27AE60;
+    border-style: none;
+    color:white;
+    border-style: solid;
+    border-width: 2px;
+}
+.btn-cancelar{
+    background-color:#FF5243;
+    border-style: none;
+    color:white;
+}
+.btn-cancelar:hover{
+    background-color:#FF5243;
+    border-style: none;
+    color:white;
+    border-style: solid;
+    border-width: 2px;
+}
+input[type="radio"]:checked {
+    accent-color: #27AE60; /* Green */
+}
+
+/*Estilo para pagina buscar recetas*/
+.foto-receta{
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+}
+.row>*{
+    padding-left: 0;
+}
 
 

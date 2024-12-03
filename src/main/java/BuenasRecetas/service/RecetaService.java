@@ -2,6 +2,8 @@ package BuenasRecetas.service;
 
 import BuenasRecetas.domain.Receta;
 
+import java.util.List;
+
 public interface RecetaService {
 
     //Esto se utiliza para salvar recetas y modificarlas en la base de datos
