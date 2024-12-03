@@ -11,8 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("")
 public class RoutingController {
 
+    @Autowired
+    RecetaService recetaService;
+    
     @GetMapping("/BuscadorRecetas/buscar")
-    public String getBuscador() {
+    public String getRecetas(Model model) {
+        var recetas = recetaService.getRecetas(true);
+        model.addAttribute("recetas", recetas);
+        model.addAttribute("totalRecetas", recetas.size());
         return "/BuscadorRecetas/buscar";
     }
 
