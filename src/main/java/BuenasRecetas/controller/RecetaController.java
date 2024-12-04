@@ -23,7 +23,6 @@ public class RecetaController {
     @PostMapping("/AgregarReceta/crearReceta/guardar")
     public String mostrarReceta(Receta receta) {
 
-
         recetaService.save(receta);
         return "redirect:/BuscadorRecetas/buscar";
     }
@@ -38,6 +37,7 @@ public class RecetaController {
         return "/BuscadorRecetas/buscar";
 
     }
+
     @PostMapping("/BuscadorRecetas/buscar/eliminar/{idReceta}")
     public String eliminarReceta(Receta receta){
 

@@ -98,3 +98,13 @@ input[type="radio"]:checked {
 .row>*{
     padding-left: 0;
 }
+
+/*Estilo para pagina buscar recetas*/
+.foto-receta{
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+}
+.row>*{
+    padding-left: 0;
+}
