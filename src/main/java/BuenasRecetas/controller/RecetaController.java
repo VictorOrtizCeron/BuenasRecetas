@@ -14,33 +14,47 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @Slf4j
-@RequestMapping("/AgregarReceta/crearReceta")
+@RequestMapping("")
 public class RecetaController {
 
     @Autowired
     RecetaService recetaService;
 
-    @PostMapping("/guardar")
+    @PostMapping("/AgregarReceta/crearReceta/guardar")
     public String mostrarReceta(Receta receta) {
 
-        //System.out.println(receta.toString());
+
         recetaService.save(receta);
         return "redirect:/BuscadorRecetas/buscar";
     }
 
+    @GetMapping("/BuscadorRecetas/buscar/query")
+    public String buscarReceta(@RequestParam(value = "nombreBusqueda") String nombreBusqueda, Model model){
+
+        System.out.println(nombreBusqueda);
+        var recetas= recetaService.buscarPorNombre(nombreBusqueda);
+        model.addAttribute("recetas",recetas);
+
+        return "/BuscadorRecetas/buscar";
+
+    }
     @PostMapping("/BuscadorRecetas/buscar/eliminar/{idReceta}")
-    public String eliminarReceta(Receta receta) {
+    public String eliminarReceta(Receta receta){
+
         System.out.println(receta.toString());
         recetaService.delete(receta);
+
+
         return "redirect:/BuscadorRecetas/buscar";
+
     }
 
-    @GetMapping("/BuscadorRecetas/buscar/query")
-    public String buscarReceta(@RequestParam(value = "nombreBusqueda") String nombreBusqueda, Model model) {
-        System.out.println(nombreBusqueda);
-        var recetas = recetaService.buscarPorNombre(nombreBusqueda);
-        model.addAttribute("recetas", recetas);
-        return "/BuscadorRecetas/buscar";
+
+    @PostMapping("/modificarReceta/modificar/actualizar/{idReceta}")
+    public String recetaActualizar(Receta receta , Model model) {
+
+        recetaService.save(receta);
+        return "redirect:/BuscadorRecetas/buscar";
     }
 
 }

@@ -8,10 +8,13 @@ public interface RecetaService {
 
     //Esto se utiliza para salvar recetas y modificarlas en la base de datos
     public void save(Receta receta);
-    
+
     public List<Receta> getRecetas(boolean activos);
 
-    public List<Receta> buscarPorNombre(String nombreBusqueda);
-    
+
+    public List<Receta>buscarPorNombre(String nombreBusqueda);
+
+    public Receta getReceta(Receta receta);
+
     public void delete(Receta receta);
 }

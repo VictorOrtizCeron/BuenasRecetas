@@ -19,30 +19,38 @@ public class RecetaServiceImpl implements RecetaService {
     public void save(Receta receta){
         recetaDao.save(receta);
     }
-    
+
     @Override
     @Transactional(readOnly = true)
-    public List<Receta> getRecetas(boolean activo) {
-        var lista = recetaDao.findAll();
+    public List<Receta> getRecetas(boolean activo){
+
+        var lista=recetaDao.findAll();
         if (activo) {
             lista.removeIf(e -> !e.isActivo());
         }
         return lista;
     }
-    
+
     @Override
     @Transactional(readOnly = true)
-    public List<Receta> buscarPorNombre(String nombreBusqueda) {
+    public Receta getReceta(Receta receta){
+
+        return recetaDao.findById(receta.getIdReceta()).orElse(null);
+
+    }
+    @Override
+    @Transactional(readOnly = true)
+    public List<Receta> buscarPorNombre(String nombreBusqueda){
+
         String nombre = "%" + nombreBusqueda + "%";
+
         System.out.println(nombre);
         return recetaDao.buscarPorNombre(nombre);
     }
-    
     @Override
-    @Transactional public
-    void delete(Receta receta) {
+    @Transactional
+    public void delete(Receta receta){
         recetaDao.delete(receta);
     }
-    
-    
+
 }

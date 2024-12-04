@@ -1,44 +1,43 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <head th:replace="~{layout/plantilla :: head}">
 
-    </head>
+<head th:replace="~{layout/plantilla :: head}">
+
 </head>
-<body class = "landing-page-body">
-<header >
+
+<body class="landing-page-body" th:object="${receta}">
+<header>
     <nav th:replace="~{layout/plantilla :: navbar}"></nav>
 </header>
-</body>
-<form th:action ="@{/AgregarReceta/crearReceta/guardar}" th:object ="${receta}"
-      method = "POST" class="was-validated"  enctype="multipart/form-data" >
-    <div class = "container">
 
-
+<form id = "editar" th:action="@{/modificarReceta/modificar/actualizar/}+${receta.idReceta}"
+      method="POST" class="was-validated" enctype="multipart/form-data">
+    <div class="container">
 
 
         <div class="mb-3">
             <label for="nombre" class="form-label text-font">Nombre de la Receta</label>
-            <input type="text" class="form-control" name ="nombre" required = "true" >
+            <input type="text" class="form-control" th:field="*{nombre}" name="nombre" required="true">
         </div>
         <div class="mb-3">
             <label for="descripcion" class="form-label text-font">Describe tu receta</label>
-            <textarea class="form-control" name = "descripcion" required = "true" rows="3"></textarea>
+            <textarea class="form-control" th:field="*{descripcion}" name="descripcion" required="true"
+                      rows="3"></textarea>
 
         </div>
 
         <div class="d-flex row align-items-center">
             <div class="mb-3 col-6">
                 <label for="pasos" class="form-label text-font">Pasos de la receta</label>
-                <textarea class="form-control" name="pasos" required = "true"rows="3"></textarea>
+                <textarea class="form-control" th:field="*{pasos}" name="pasos" required="true" rows="3"></textarea>
 
             </div>
             <div class="mb-3 col-6">
 
                 <label for="rutaImagen" class="form-label text-font">Url de la imagen</label>
-                <input type="text" class="form-control" required = "true" name = "rutaImagen" id="basic-url" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" th:field="*{rutaImagen}" required="true" name="rutaImagen"
+                       id="basic-url" aria-describedby="basic-addon3">
 
             </div>
 
@@ -47,7 +46,7 @@
         <div class="mb-3 d-flex row align-items-center">
             <div class="mb-3 col-6">
                 <label for="categoria" class="form-label text-font">Selecciona una categoría</label>
-                <select id="categoria" name="categoria" class="form-select"  required>
+                <select id="categoria" name="categoria" th:field="*{categoria}" class="form-select" required>
                     <option value="" selected disabled>Elige una opción</option>
                     <option value="Desayuno">Desayuno</option>
                     <option value="Almuerzo">Almuerzo</option>
@@ -61,34 +60,35 @@
                 <label class="form-label text-font">Modalidad de publicación</label>
 
                 <div>
-                    <input type="radio" id="activo" name="activo" value="true" required>
+                    <input type="radio" th:field="*{activo}" id="activo" name="activo" value="true" required>
                     <label for="activo">Público</label>
                 </div>
                 <div>
-                    <input type="radio" id="inactivo" name="activo" value="false" required>
+                    <input type="radio" th:field="*{activo}" id="inactivo" name="activo" value="false" required>
                     <label for="inactivo">Privado</label>
                 </div>
 
             </div>
 
         </div>
+        </form>
+        <div class="d-flex row ">
+            <div class="col-1">
+                <button type="submit" form ="editar" class="btn btn-aceptar  ">Publicar</button>
 
-        <div class = "d-flex row ">
-            <div class = "col">
-                <button type="submit" class="btn btn-aceptar  ">Publicar</button>
 
-                <button type="button" class="btn btn-cancelar ">Cancelar</button>
+            </div>
+            <div class="col-1">
+                <form th:action="@{/BuscadorRecetas/buscar}" method="POST">
+
+                    <button type="submit" class="btn btn-cancelar ">Cancelar</button>
+                </form>
             </div>
 
         </div>
 
 
-</form>
 
 
-
-
-
-</div>
 </body>
 </html>
