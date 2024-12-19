@@ -38,6 +38,10 @@ public class RoutingController {
     public String getIndex() {
         return "/index";
     }
+    @GetMapping("/About/about")
+    public String getAbout() {
+        return "/About/about";
+    }
 
     @GetMapping("/login/inicio_sesion")
     public String mostrarLogin() {

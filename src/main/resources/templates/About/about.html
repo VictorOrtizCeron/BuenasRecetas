@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{layout/plantilla :: head}">
+
+    <header>
+        <nav th:replace="~{layout/plantilla :: navbar}"></nav>
+    </header>
+<body class = "landing-page-body">
+
+    <div style="text-align: justify; max-width: 600px; padding: 20px;" class="justify-content-center mx-auto">
+        <h1 class="texto_highlight title" style = "text-align:center">Sobre nosotros</h1>
+        <p class="text-font">
+            En Buenas Recetas, creemos que la cocina es el alma del hogar y una forma de conectar con los demás.
+            Nuestra plataforma está dedicada a reunir a amantes de la gastronomía, permitiéndoles compartir sus
+            mejores recetas y descubrir nuevas ideas culinarias. Ya sea que seas un chef experimentado o alguien
+            que recién comienza, encontrarás inspiración y una comunidad apasionada por la buena comida. ¡Únete
+            y comparte tu sazón con el mundo!
+        </p>
+    </div>
+    <img class = "foto-landing-page-verduras" th:src ="@{/images/verduras.png}">
+    <img class = "foto-landing-page-steak" th:src ="@{/images/steak.png}">
+</body>
+</html>

@@ -22,17 +22,17 @@ public class CuentaController {
 
 
 
-    @PostMapping("/login/ingresar")
-    public String login(@RequestParam("email") String email,@RequestParam("password") String password){
-
-        ModelAndView modelAndView = new ModelAndView();
-        if ("admin@ufide.ac.cr".equals(email) && "password".equals(password)) {
-            modelAndView.setViewName("home");  // Redirect to home page on successful login
-            return "/AgregarReceta/agregar_receta";
-        } else {
-            modelAndView.setViewName("login/inicio_sesion");  // Redirect back to login on failure
-            modelAndView.addObject("error", "Invalid username or password.");
-        }
-        return "redirect:/auth/login/inicio_sesion";
-    }
+//    @PostMapping("/login/ingresar")
+//    public String login(@RequestParam("email") String email,@RequestParam("password") String password){
+//
+//        ModelAndView modelAndView = new ModelAndView();
+//        if ("admin@ufide.ac.cr".equals(email) && "password".equals(password)) {
+//            modelAndView.setViewName("home");  // Redirect to home page on successful login
+//            return "/AgregarReceta/agregar_receta";
+//        } else {
+//            modelAndView.setViewName("login/inicio_sesion");  // Redirect back to login on failure
+//            modelAndView.addObject("error", "Invalid username or password.");
+//        }
+//        return "redirect:/auth/login/inicio_sesion";
+//    }
 }
